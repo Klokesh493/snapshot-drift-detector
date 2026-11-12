@@ -4,11 +4,14 @@ Compares expected and actual snapshot schedules to catch policy drift.
 
 ```mermaid
 flowchart LR
-    N0["sample_snapshots.csv"]
-    N1["snapshot_drift.py"]
-    N2["drift / offenders"]
-    N3["Result for operator review"]
-    N0 --> N1 --> N2 --> N3
+    A["Expected and actual snapshot intervals"]
+    B["Compute absolute interval difference"]
+    C{"Drift exceeds two hours?"}
+    D["Emit affected workload"]
+    E["Omit in-tolerance workload"]
+    A --> B --> C
+    C -->|Yes| D
+    C -->|No| E
 ```
 
 ## Operational boundaries
