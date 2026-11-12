@@ -2,7 +2,7 @@
 
 ## Business problem
 
-Compares expected and actual snapshot schedules to catch policy drift.
+A snapshot schedule can drift gradually from its intended cadence, increasing the time between recovery points.
 
 ## Reproduce the workflow
 
